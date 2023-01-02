@@ -2,7 +2,7 @@
  * @Author: xiaoxinYy 3037686283@qq.com
  * @Date: 2022-12-24 11:18:59
  * @LastEditors: xiaoxinYy 3037686283@qq.com
- * @LastEditTime: 2023-01-02 12:30:55
+ * @LastEditTime: 2023-01-02 17:25:32
  * @FilePath: \react\2_scaffold\learn_scaffold\src\index.js
  * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
  */
@@ -13,7 +13,10 @@ import ReactDOM from 'react-dom/client';
 // 再把store传入封装的高阶函数中 可以获取到store
 import store from './store'
 
-import { StoreContext } from './utils/context';
+// import { StoreContext } from './utils/context';
+
+// 使用官方提供的和StoreContext功能相同的Provider
+import { Provider } from 'react-redux';
 
 import 'antd/dist/antd.css'
 // import App from './App';
@@ -57,10 +60,16 @@ import './css/index.css'
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-    <StoreContext.Provider value={store}>
-      <App name='xiaoxin'/>
-    </StoreContext.Provider>
+  <Provider store={store}>
+    <App name='xiaoxin'/>
+  </Provider>
 );
+
+// root.render(
+//     <StoreContext.Provider value={store}>
+//       <App name='xiaoxin'/>
+//     </StoreContext.Provider>
+// );
 // root.render(
 //   <React.StrictMode>
 //     <App />
