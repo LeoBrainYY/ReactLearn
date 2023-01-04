@@ -2,7 +2,7 @@
  * @Author: xiaoxinYy 3037686283@qq.com
  * @Date: 2023-01-02 00:31:31
  * @LastEditors: xiaoxinYy 3037686283@qq.com
- * @LastEditTime: 2023-01-02 19:45:57
+ * @LastEditTime: 2023-01-04 23:42:12
  * @FilePath: \react\redux\store\actionCreator.js
  * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
  */
@@ -15,7 +15,8 @@ import {
   INCREMENT,
   DECREMENT,
   CHANGE_BANNERS,
-  CHANGE_RECOMMEND
+  CHANGE_RECOMMEND,
+  FETCH_HOME_MULTIDATA
 } from './constants.js'
 
 // export function addAction (num) {
@@ -79,4 +80,9 @@ export const getHomeMultidataAction = (dispatch, getState) => {
     // 注意此处的参数getState是一个函数
     console.log(getState(), 'getState查看')
   })
+}
+
+// redux-saga
+export const fetchHomeMultidataAction = {
+  type: FETCH_HOME_MULTIDATA
 }
